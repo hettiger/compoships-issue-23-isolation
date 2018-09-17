@@ -2,11 +2,13 @@
 
 namespace App;
 
+use App\Traits\HasCompositePrimaryKey;
 use Awobaz\Compoships\Compoships;
 use Illuminate\Database\Eloquent\Model;
 
 class ModelA extends Model
 {
+    use HasCompositePrimaryKey;
     use Compoships;
 
     const TABLE_NAME = 'model_a';
@@ -17,6 +19,8 @@ class ModelA extends Model
     ];
 
     protected $table = self::TABLE_NAME;
+
+    protected $primaryKey = self::COMPOSITE_KEY;
 
     public function modelB()
     {

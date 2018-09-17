@@ -14,7 +14,6 @@ class CreateModelATable extends Migration
     public function up()
     {
         Schema::create('model_a', function (Blueprint $table) {
-            $table->increments('id');
             $table->integer('event_id');
             $table->date('event_date');
             $table->timestamps();
